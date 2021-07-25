@@ -1,0 +1,321 @@
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Portfolio responsive complete</title>
+        <style>
+            * {box-sizing: border-box;}
+
+            .mySlides {display: ruby;}
+            img {
+                vertical-align: top;
+                max width: 50%;
+                border: 2px solid white;
+            }
+
+            /* Slideshow container */
+            .gallery__container {
+                background-color: #FCEF9F
+                position: relative;
+                margin: 2cm 9cm 4cm 9cm ;
+                justify-items: center;
+            }
+
+            /* Caption text */
+            .text {
+                color: #FFF;
+                font-size: 15px;
+                padding: 8px 12px;
+                position: relative;
+                bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: #FFFFFF;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+                height: 15px;
+                width: 15px;
+                margin: 0;
+                background-color: #D0BF56;
+                border: 1px solid white;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .active {
+                background-color: #090909;
+            }
+
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+                from {opacity: .4}
+                to {opacity: 1}
+            }
+
+            @keyframes fade {
+                from {opacity: .4}
+                to {opacity: 1}
+            }
+
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+                .text {font-size: 11px}
+            }
+        </style>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#about" class="nav__logo">Atherv Patil</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#portfolio" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#gallery" class="nav__link">Studio</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home" id="home">
+                <div class="home__container bd-grid">
+                    <h1 class="home__title"><span>{{ home.greeting1 }}</span><br>{{ home.greeting2 }}</h1>
+
+                    <div class="home__scroll">
+                        <a href="#about" class="home__scroll-link"><i class='bx bx-up-arrow-alt' ></i>Scroll down</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!--===== ABOUT =====-->
+            <section class="about section" id="about" style="background-image: url({% static 'assets/img/05.jpg' %})" >
+                <h2 class="section-title" style="color: #C3B745 ">A B O U T &nbsp; M E</h2>
+
+                <div class="about__container bd-grid">
+                    <div>
+                        <h2 class="about__subtitle" style="color: #000; "><text style="background-color: #FFF; opacity: 0.5;"><u style="color: black">HI! I'm Atherv</u></text></h2>
+                        <span class="about__profession" style="color: #E4421A;"><text style=" background-color: #393534; opacity: 1.5;">{{ about.career }}</text></span>
+                        <p class="about__text" style="color: #000; "><strong ><text style="background-color: #E9E2E2; opacity: 0.7;">{{ about.description }}</text></strong></p>
+                        <div class="about__social" style="color: #090909">
+                            <a href="https://www.linkedin.com/in/atherv-patil-4a86691b1/" class="about__social-icon" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin' style="color: #090909"></i></a>
+                            <a href="https://github.com/ColonelAVP" class="about__social-icon" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github' style="color: #090909"></i></a>
+                            <a href="https://twitter.com/ColonelAVP_" class="about__social-icon" style="color: #000" target="_blank" rel="noopener noreferrer"><i class='bx bxl-twitter' style="color: #090909"></i></a>
+                        </div>
+                        <span class="about__btn" style="border: 1px solid white;"><a href="{% static 'assets/img/atherv_patil_resume.pdf' %}" target="_blank" rel="noopener noreferrer" >RESUME</a></span>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills" style="background-image: url({% static 'assets/img/final.jpg' %})" >
+                <h2 class="section-title" style="color: #AA9F38 ;">M Y &nbsp; S K I L L S</h2>
+
+                <div class="skills__container" style="display: ruby; margin: 8rem;">
+                    <div class="skills__box">
+                    {% for category in categories %}
+                    <h3 class="skills__subtitle" style="color: #DA3F23 ">{{ category.name }}</h3>
+                        {% for skills in category.skills_set.all %}
+                            <span class="skills__name" style="color: #1F1F1F" >{{ skills.skill_name}}</span>
+                        {% endfor %}
+                    {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <!--===== PORTFOLIO =====-->
+            <section class="portfolio section" id="portfolio" style="background-image: url({% static 'assets/img/sada.jpg' %})">
+                <h2 class="section-title" style="color: #D0BF56 ;" >M Y &nbsp;W O R K</h2>
+
+                <div class="portfolio__container bd-grid">
+                    {% for project in projects %}
+                    <div class="portfolio__img">
+                        <img src="{{ project.image.url }}" alt="">
+                        <div class="portfolio__link">
+                            <a href="{{ project.link }}" class="portfolio__link-name" target="_blank" rel="noopener noreferrer" style="font-size: 25px;">View details</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+              <!--===== GALLERY =====-->
+            <section class="gallery section" id="gallery" style="background-color: #000">
+                <h2 class="section-title" style="color: #D0BF56">M Y &nbsp; S T U D I O</h2>
+                <div class="gallery__container" style="height: calc(115vh - var(--header-height));">
+                    <div class="mySlides fade">
+                      <div class="numbertext">1 / 7</div>
+                      <img src="{% static 'assets/img/1.1.jpg' %}" style="width:100%">
+                      <div class="text"><em><strong>W a n d e r l u s t</strong></em></div>
+                    </div>
+                    <div class="mySlides fade">
+                      <div class="numbertext">2 / 7</div>
+                      <img src="{% static 'assets/img/1.2.jpg' %}" style="width:100%">
+                      <div class="text"><em><strong>D I S P E R S E D</strong></em></div>
+                    </div>
+                    <div class="mySlides fade">
+                      <div class="numbertext">3 / 7</div>
+                      <img src="{% static 'assets/img/1.3.jpg' %}" style="width:100%">
+                      <div class="text"><em><strong>Shore away from City</strong></em></div>
+                    </div>
+                    <div class="mySlides fade">
+                      <div class="numbertext">4 / 7</div>
+                      <img src="{% static 'assets/img/1.5.jpg' %}" style="width:100%">
+                      <div class="text"><em><strong>Get A Life</strong></em></div>
+                    </div>
+                    <div class="mySlides fade">
+                      <div class="numbertext">5 / 7</div>
+                      <img src="{% static 'assets/img/1.4.jpg' %}" style="width:100%">
+                      <div class="text"><em><strong>F I R E v/s</strong></em></div>
+                    </div>
+                    <div class="mySlides fade">
+                      <div class="numbertext">6 / 7</div>
+                      <img src="{% static 'assets/img/1.7.jpg' %}" style="width:100%">
+                      <div class="text"><em><strong>I C E</strong></em></div>
+                    </div>
+                    <div class="mySlides fade">
+                      <div class="numbertext">7 / 7</div>
+                      <img src="{% static 'assets/img/1.6.jpg' %}" style="width:100%">
+                      <div class="text"><em><strong>Mindset is reflection of Ones' own behaviour</strong></em></div>
+                    </div>
+                    <div style="text-align:center">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact" style="background-image: url({% static 'assets/img/vinyl.jpg' %})">
+                <h2 class="section-title" style="color: #D0BF56;">C O N T A C T &nbsp; M E</h2>
+
+                <div class="contact__container bd-grid">
+                    <div class="contact__info">
+                        <h3 class="contact__subtitle"><strong>EMAIL</strong></h3>
+                        <span class="contact__text">athervpatil05@gmail.com</span>
+
+                        <h3 class="contact__subtitle"><strong>PHONE</strong></h3>
+                        <span class="contact__text">+91 8983914599</span>
+
+                        <h3 class="contact__subtitle"><strong>ADDRESS</strong></h3>
+                        <span class="contact__text">Navi Mumbai, India</span>
+                    </div>
+
+                    <form class="contact__form" method="post">
+                        {% csrf_token %}
+                        <div class="contact__inputs">
+                            <input name="name" type="text" placeholder="Name" class="contact__input">
+                            <input name="email" type="email" placeholder="Email" class="contact__input">
+                        </div>
+
+                        <textarea name="message" id="" cols="0" rows="10" placeholder="Write to us..." class="contact__input"></textarea>
+                            <input type="submit" value="SUBMIT" class="contact__button" style="border: 2px solid white;">
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer section">
+            <div class="footer__container bd-grid">
+                <div class="footer__data">
+                    <h2 class="footer__title">ATHERV V. PATIL</h2>
+                    <p class="footer__text"><a href="#about">Software Developer</a></p>
+                    <p class="footer__text"><a href="#gallery">Photographer</a></p>
+                     <p class="footer__text">© 2021 Copyright. All rights reserved.</p>
+                </div>
+
+                <div class="footer__data">
+                    <h2 class="footer__title">EXPLORE</h2>
+                    <ul>
+                        <li><a href="#home" class="footer__link">Home</a></li>
+                        <li><a href="#about" class="footer__link">About</a></li>
+                        <li><a href="#skills" class="footer__link">Skills</a></li>
+                        <li><a href="#portfolio" class="footer__link">Projects</a></li>
+                        <li><a href="#gallery" class="footer__link">Gallery</a></li>
+                        <li><a href="#contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__data">
+                    <h2 class="footer__title">FOLLOW</h2>
+                    <a href="https://www.facebook.com/atherv.v.patil" class="footer__social" target="_blank" rel="noopener noreferrer"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://www.instagram.com/athervvpatil/" class="footer__social" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://discordapp.com/users/437705907401392128" class="footer__social" target="_blank" rel="noopener noreferrer"><i class='bx bxl-discord'></i></a>
+                    <a href="https://twitter.com/ColonelAVP_" class="footer__social" target="_blank" rel="noopener noreferrer"><i class='bx bxl-twitter' ></i></a>
+                </div>
+
+
+            </div>
+        </footer>
+        <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 3000); // Change image every 5 seconds
+        }
+        </script>
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <!--===== MAIN JS =====-->
+        <script type="text/Javascript" src="{% static 'assets/js/main.js' %}"></script>
+    </body>
+</html>
